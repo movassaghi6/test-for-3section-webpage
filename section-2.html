@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+.bodyclass {
+    background-image: url('pexels-bithinraj-mb-2763927.jpg');
+    /* height: 200vh; */
+} 
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+<head>
+<h1>this is the second html page</h1>
+</head>  
+
+<body class="bodyclass">
+<h3>Form</h3>
+<div class="container">
+   <form>
+      <label for="fname">Name</label>
+      <input id="fname"  name="name">
+      <label for="lname">LastName</label>
+      <input id="lname" name="lastname">
+      <label for="email">Email</label>
+      <input id="email"name="email">
+      <label for="bdate">BirthDate</label>
+      <input id="bdate"name="Birthdate">
+      <button>Fill</button>
+   </form>
+</div>
+
+ <nav>
+    <a href="./section-1.html">section-1</a>
+    <a href="./section-2.html">section-2</a>
+    <a href="./section-3.html">section-3</a>
+ </nav>
+
+<script>
+
+function fillForm() {
+  // Get all input elements in the form
+  const inputs = document.querySelectorAll('input');
+
+  // Get the list of names, last names, emails, and birth dates from the provided information
+  const names = ['amir', 'ali', 'mehdi', 'salar'];
+  const lastNames = ['ahmadi', 'rajai', 'habibi', 'emadi'];
+  const emails = ['gfdpo34@yahoo.com', 'dsaoSD34@yahoo.com', 'afqopop2@yahoo.com', 'asdADS77@yahoo.com'];
+  const birthDates = ['1950-01-01', '1995-02-05', '1999-10-19', '2002-12-23'];
+
+  // Set the value of each input element to the corresponding random value from the lists
+  inputs.forEach(input => {
+    switch (input.name) {
+      case 'name':
+        input.value = names[Math.floor(Math.random() * names.length)];
+        break;
+      case 'lastname':
+        input.value = lastNames[Math.floor(Math.random() * lastNames.length)];
+        break;
+      case 'email':
+        input.value = emails[Math.floor(Math.random() * emails.length)];
+        break;
+      case 'Birthdate':
+        input.value = birthDates[Math.floor(Math.random() * birthDates.length)];
+        break;
+    }
+    // Set the display property of the input element to visible
+    input.style.display = 'block';
+  });
+}
+
+// Add an event listener to the "Fill" button to call the fillForm() function
+const fillButton = document.querySelector('button');
+    fillButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      fillForm();
+    });
+</script>    
+
+</body>
+</html>

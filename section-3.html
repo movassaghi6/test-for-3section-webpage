@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+.bodyclass {
+    background-image: url('pexels-bithinraj-mb-2763927.jpg');
+    /* height: 200vh; */
+} 
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+<head>
+<h1 style="color:white;">this is the second html page</h1>
+</head>  
+
+<body class="bodyclass">
+<h3 style="color:white;">User Signin</h3>
+
+<div class="container">
+<form onsubmit="return validateLogin()">
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button type="submit" id="login-button">Login</button>
+</form>
+      
+
+</div>
+
+<nav>
+    <a href="./section-1.html">section-1</a>
+    <a href="./section-2.html">section-2</a>
+    <a href="./section-3.html">section-3</a>
+  
+</nav>
+
+
+<script>
+
+function validateLogin() {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Get the username and password from the form
+  const username = document.querySelector('#username').value;
+  const password = document.querySelector('#password').value;
+
+  // Create an object of valid usernames and passwords
+  const validCredentials = {
+    ali: '123asd123',
+    amir5: 'ewq321ewq',
+    ahamd12: 'zxc456zxc',
+  };
+
+  // Check if the username and password are valid
+  if (validCredentials[username] === password) {
+    alert('Login successful');
+  } else {
+    alert('Login failed');
+  }
+}
+
+// Add an event listener to the login button
+const loginButton = document.querySelector('#login-button');
+loginButton.addEventListener('click', validateLogin);
+
+</script>
+
+</body>
+</html>

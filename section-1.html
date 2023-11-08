@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.bodyclass {
+    background-image: url('pexels-bithinraj-mb-2763927.jpg');
+    /* height: 200vh; */
+} /* This is a CSS class selector. It is used to apply styles to elements with the class bodyclass. In this case, it sets a background image for the body of the document. */
+.grid-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: auto;
+    gap: 10px 10px;
+    /* margin-bottom: 15px; */
+} /* Another CSS class selector. It defines styles for a grid container, setting up a 3x3 grid that spans the entire viewport. */
+ 
+
+.grid-item {
+  background-color: black;
+  aspect-ratio: 1;
+}
+
+    /*border-radius: 0%; /* Create a circular shape */
+    /*aspect-ratio: 1; /* Make cells perfectly square */
+    
+ /* This class defines styles for the individual grid items. It gives them a circular shape, an opaque background, and makes them perfectly square. */
+ 
+.grid-item:hover {
+    opacity: 0;
+}
+
+#change-color-btn {
+  margin: 0;
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style> 
+
+</head>
+ 
+<body class="bodyclass">
+<div class="grid-container">
+    <div id="grid-item1" class="grid-item"></div>
+    <div id="grid-item2" class="grid-item"></div>
+    <div id="grid-item3" class="grid-item"></div>
+    <div id="grid-item4" class="grid-item"></div>
+    <div id="grid-item5" class="grid-item"></div>
+    <div id="grid-item6" class="grid-item"></div>
+    <div id="grid-item7" class="grid-item"></div>
+    <div id="grid-item8" class="grid-item"></div>
+    <div id="grid-item9" class="grid-item"></div>
+</div>
+
+<button id="change-color-btn">Change Color</button>
+
+<nav>
+  <a href="./section-1.html">section-1</a>
+  <a href="./section-2.html">section-2</a>
+  <a href="./section-3.html">section-3</a>
+</nav>
+
+<script>
+const colors = ["black","blue", "orange", "red", "yellow"];
+
+let currentIndex = 0;
+
+const changeColorBtn = document.querySelector('#change-color-btn');
+
+changeColorBtn.addEventListener('click', changeColor);
+
+function changeColor() {
+  const gridItems = document.querySelectorAll('.grid-item');
+  gridItems.forEach(item => {
+    item.style.backgroundColor = colors[currentIndex];
+  });
+
+  // Increment the current color index
+  currentIndex = (currentIndex + 1) % colors.length;
+}
+
+// Call the function once to apply the initial color
+changeColor();
+</script>
+
+</body>
+</html>
+
+ 
