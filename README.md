@@ -1,10 +1,10 @@
 # test-for-3section-webpage
 
-##Intrduction
+## Intrduction
 
 I used Cypress for an End-To-End testing for 3pages I wrote with HTML, CSS, and Javascript.
 
-##Getting Started
+## Getting Started
 1. first use this utility to initialize a package.json file and change it like my package.json file:
    ```
    npm install
